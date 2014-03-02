@@ -16,7 +16,8 @@
 /**
  *  The main scene
  */
-@interface HelloWorldScene : CCScene
+@interface HelloWorldScene : CCScene <CCPhysicsCollisionDelegate>
+
 
 // -----------------------------------------------------------------------
 

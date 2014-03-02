@@ -43,7 +43,11 @@
     
     // 2
     monster.position = CGPointMake(self.contentSize.width + monster.contentSize.width/2,randomY);
-    [self addChild:monster];
+    //[self addChild:monster];
+    monster.physicsBody = [CCPhysicsBody bodyWithRect:(CGRect){CGPointZero, monster.contentSize} cornerRadius:0];
+    monster.physicsBody.collisionGroup = @"monsterGroup";
+    monster.physicsBody.collisionType  = @"monsterCollision";
+    [_physicsWorld addChild:monster];
     
     // 3
     int minDuration = 2.0;
@@ -62,6 +66,13 @@
 }
 
 // -----------------------------------------------------------------------
+- (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair monsterCollision:(CCNode *)monster projectileCollision:(CCNode *)projectile{
+    [monster removeFromParent];
+    [projectile removeFromParent];
+    return YES;
+}
+
+// -----------------------------------------------------------------------
 
 - (id)init
 {
@@ -73,6 +84,7 @@
     // 3
     // Enable touch handling on scene node
     self.userInteractionEnabled = YES;
+    [[OALSimpleAudio sharedInstance] playBg:@"background-music-aac.caf" loop:YES];
     
     // 4
     // Create a colored background (Dark Grey)
@@ -82,7 +94,7 @@
     // physics method
     _physicsWorld = [CCPhysicsNode node];
     _physicsWorld.gravity = ccp(0,0);
-    _physicsWorld.debugDraw = YES;
+    // _physicsWorld.debugDraw = YES;
     _physicsWorld.collisionDelegate = self;
     [self addChild:_physicsWorld];
     
@@ -91,7 +103,10 @@
     // Add a sprite
     _player = [CCSprite spriteWithImageNamed:@"player.png"];
     _player.position  = ccp(self.contentSize.width/8,self.contentSize.height/2);
-    [self addChild:_player];
+    // [self addChild:_player];
+    _player.physicsBody = [CCPhysicsBody bodyWithRect:(CGRect){CGPointZero, _player.contentSize} cornerRadius:0]; // 1
+    _player.physicsBody.collisionGroup = @"playerGroup"; //2
+    [_physicsWorld addChild:_player];
     
     // 6
     // Animate sprite with action
@@ -169,12 +184,19 @@
     // 3
     CCSprite *projectile = [CCSprite spriteWithImageNamed:@"projectile.png"];
     projectile.position = _player.position;
-    [self addChild:projectile];
+    // [self addChild:projectile];
+    projectile.physicsBody = [CCPhysicsBody bodyWithCircleOfRadius:projectile.contentSize.width/2.0f andCenter:projectile.anchorPointInPoints];
+    projectile.physicsBody.collisionGroup   = @"playerGroup";
+    projectile.physicsBody.collisionType    = @"projectileCollision";
+    [_physicsWorld addChild:projectile];
+    
     
     // 4
     CCActionMoveTo *actionMove  = [CCActionMoveTo actionWithDuration:1.5f position:targetPosition];
     CCActionRemove *actionRemove = [CCActionRemove action];
     [projectile runAction:[CCActionSequence actionWithArray:@[actionMove, actionRemove]]];
+    [[OALSimpleAudio sharedInstance]playEffect:@"pew-pew-lei.caf"];
+    
 }
 
 // -----------------------------------------------------------------------
