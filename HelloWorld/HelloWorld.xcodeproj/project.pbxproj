@@ -280,6 +280,14 @@
 		84DF51DD18C1591800D59997 /* libwebsockets.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84DF51DC18C1591800D59997 /* libwebsockets.a */; };
 		84DF51E318C1591800D59997 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84DF51E218C1591800D59997 /* AppDelegate.cpp */; };
 		84DF51E618C1591800D59997 /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84DF51E518C1591800D59997 /* HelloWorldScene.cpp */; };
+		84DF51F618C15FD300D59997 /* monster-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 84DF51ED18C15FD300D59997 /* monster-hd.png */; };
+		84DF51F718C15FD300D59997 /* monster.png in Resources */ = {isa = PBXBuildFile; fileRef = 84DF51EE18C15FD300D59997 /* monster.png */; };
+		84DF51F818C15FD300D59997 /* player-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 84DF51EF18C15FD300D59997 /* player-hd.png */; };
+		84DF51F918C15FD300D59997 /* player.png in Resources */ = {isa = PBXBuildFile; fileRef = 84DF51F018C15FD300D59997 /* player.png */; };
+		84DF51FA18C15FD300D59997 /* projectile-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 84DF51F118C15FD300D59997 /* projectile-hd.png */; };
+		84DF51FB18C15FD300D59997 /* projectile.png in Resources */ = {isa = PBXBuildFile; fileRef = 84DF51F218C15FD300D59997 /* projectile.png */; };
+		84DF51FC18C15FD300D59997 /* background-music-aac.caf in Resources */ = {isa = PBXBuildFile; fileRef = 84DF51F418C15FD300D59997 /* background-music-aac.caf */; };
+		84DF51FD18C15FD300D59997 /* pew-pew-lei.caf in Resources */ = {isa = PBXBuildFile; fileRef = 84DF51F518C15FD300D59997 /* pew-pew-lei.caf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -873,6 +881,14 @@
 		84DF51E218C1591800D59997 /* AppDelegate.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = AppDelegate.cpp; path = Classes/AppDelegate.cpp; sourceTree = "<group>"; };
 		84DF51E418C1591800D59997 /* HelloWorldScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HelloWorldScene.h; path = Classes/HelloWorldScene.h; sourceTree = "<group>"; };
 		84DF51E518C1591800D59997 /* HelloWorldScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = HelloWorldScene.cpp; path = Classes/HelloWorldScene.cpp; sourceTree = "<group>"; };
+		84DF51ED18C15FD300D59997 /* monster-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "monster-hd.png"; sourceTree = "<group>"; };
+		84DF51EE18C15FD300D59997 /* monster.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = monster.png; sourceTree = "<group>"; };
+		84DF51EF18C15FD300D59997 /* player-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player-hd.png"; sourceTree = "<group>"; };
+		84DF51F018C15FD300D59997 /* player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player.png; sourceTree = "<group>"; };
+		84DF51F118C15FD300D59997 /* projectile-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "projectile-hd.png"; sourceTree = "<group>"; };
+		84DF51F218C15FD300D59997 /* projectile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = projectile.png; sourceTree = "<group>"; };
+		84DF51F418C15FD300D59997 /* background-music-aac.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "background-music-aac.caf"; sourceTree = "<group>"; };
+		84DF51F518C15FD300D59997 /* pew-pew-lei.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pew-pew-lei.caf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -944,6 +960,8 @@
 		84DF4E5018C1591200D59997 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				84DF51EC18C15FD300D59997 /* Art */,
+				84DF51F318C15FD300D59997 /* Sounds */,
 				84DF4E5118C1591200D59997 /* CloseNormal.png */,
 				84DF4E5318C1591200D59997 /* CloseSelected.png */,
 				84DF4E5518C1591200D59997 /* Default.png */,
@@ -2101,6 +2119,28 @@
 			name = Classes;
 			sourceTree = "<group>";
 		};
+		84DF51EC18C15FD300D59997 /* Art */ = {
+			isa = PBXGroup;
+			children = (
+				84DF51ED18C15FD300D59997 /* monster-hd.png */,
+				84DF51EE18C15FD300D59997 /* monster.png */,
+				84DF51EF18C15FD300D59997 /* player-hd.png */,
+				84DF51F018C15FD300D59997 /* player.png */,
+				84DF51F118C15FD300D59997 /* projectile-hd.png */,
+				84DF51F218C15FD300D59997 /* projectile.png */,
+			);
+			path = Art;
+			sourceTree = "<group>";
+		};
+		84DF51F318C15FD300D59997 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				84DF51F418C15FD300D59997 /* background-music-aac.caf */,
+				84DF51F518C15FD300D59997 /* pew-pew-lei.caf */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2151,14 +2191,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84DF51FC18C15FD300D59997 /* background-music-aac.caf in Resources */,
 				84DF4E6218C1591200D59997 /* Icon.png in Resources */,
 				84DF4F0518C1591300D59997 /* ChangeLog in Resources */,
 				84DF4E5218C1591200D59997 /* CloseNormal.png in Resources */,
 				84DF4E5E18C1591200D59997 /* Icon-Small.png in Resources */,
+				84DF51F618C15FD300D59997 /* monster-hd.png in Resources */,
+				84DF51FB18C15FD300D59997 /* projectile.png in Resources */,
 				84DF4E5A18C1591200D59997 /* Icon-72.png in Resources */,
+				84DF51F818C15FD300D59997 /* player-hd.png in Resources */,
 				84DF4E5818C1591200D59997 /* HelloWorld.png in Resources */,
 				84DF4E5C18C1591200D59997 /* Icon-Small-50.png in Resources */,
+				84DF51F918C15FD300D59997 /* player.png in Resources */,
+				84DF51F718C15FD300D59997 /* monster.png in Resources */,
 				84DF4E6618C1591200D59997 /* iTunesArtwork in Resources */,
+				84DF51FD18C15FD300D59997 /* pew-pew-lei.caf in Resources */,
+				84DF51FA18C15FD300D59997 /* projectile-hd.png in Resources */,
 				84DF4E6018C1591200D59997 /* Icon-Small@2x.png in Resources */,
 				84DF4E5618C1591200D59997 /* Default.png in Resources */,
 				84DF4E5418C1591200D59997 /* CloseSelected.png in Resources */,
@@ -2564,6 +2612,7 @@
 				84DF51EB18C1591800D59997 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
